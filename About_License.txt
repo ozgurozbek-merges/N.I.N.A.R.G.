@@ -1,0 +1,10 @@
+I think that License should be enough. It has the same status as "Unlicensed" or
+"No-License" software, but, with the addition of reproducing the code or re-compiling
+it WITHOUT being able to distribute it as a new product. That is to allow all modders
+and mods a happy time.
+
+Whatever they do with their mods are up to them.
+
+We should add some sort of pre-defined fields that parse JSONs for easier data creation.
+
+- Ozgur
