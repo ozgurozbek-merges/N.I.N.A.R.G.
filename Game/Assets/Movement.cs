@@ -25,6 +25,7 @@ public class Movement : MonoBehaviour
 
     private void Awake()
     {
+        Cursor.visible=false;//too bad!!!
         rBody = GetComponent<Rigidbody>();
         rBody.interpolation = RigidbodyInterpolation.None; // We don't want jittery collision
         rBody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic; // We want decent collision detection.
