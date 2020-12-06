@@ -8,7 +8,8 @@ public class PlayerOnGroundChecker : MonoBehaviour
         if (other.gameObject.tag == "ground")
         {
             playerObject.GetComponent<Movement>().onGround = true;
-            playerObject.GetComponent<Movement>().landingMoment = true;
+            playerObject.GetComponent<Movement>().landingMoment = true; // Required to do ANYTHING at the moment of landing.
+                                                                        // Other scripts will turn it false.
         }
     }
 
