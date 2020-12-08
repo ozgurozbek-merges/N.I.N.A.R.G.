@@ -3,49 +3,70 @@ using System.Collections;
 
 public class Movement : MonoBehaviour
 {
+    # region Variables
+    [Header("Important")] // Stuff
     public Rigidbody rBody;
     public Transform tForm;
+    private float horizontalMovement;
+    private float verticalMovement;
 
-    // Statics. Some Items are going to add their multiplications to these.
+    [Header("Statics")] // Some Items are going to add their multiplications to these.
     public float moveSpeed;
     public float dashSpeed;
     private float dashSpeedTemp;
     public int dashCooldown;
-    public float jumpMultiplier = 8;
+    public float jumpHeight = 1f;
+    public float jumpMultiplier = 1f;
     public int descendSpeed = 500;
+    public float gravity = -9.806650f;
 
-    // Boolean status checkers. Some Items are going to alter these.
+    [Header("Boolean Checks")] // Some Items are going to alter these.
     public bool onGround;
     public bool hasJumped;
     public bool landingMoment;
     public bool ableToDash = true; // Will always start true, unless revoked or granted by an item.
     public bool nowDashing;
 
+    [Header("Movement Related")]
     // For not carrying out the movement. Horrible way to do this since Unity can nullify these Vectors when calling functions but I can't be bothered.
     // When active it'll point to the movement direction WITH the speed attached as the Vector3 size.
     public Vector3 movementVector;
-
+    private float xDirection;
+    private float zDirection;
+    # endregion
     private void Awake()
     {
-        Cursor.visible = false;//too bad!!!
+        Cursor.visible = false; // too bad!!!
         rBody = GetComponent<Rigidbody>();
         rBody.interpolation = RigidbodyInterpolation.None; // We don't want jittery collision
         rBody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic; // We want decent collision detection.
     }
     void Update()
     {
-        movementVector = Vector3.zero;
+        xDirection = Input.GetAxis("Horizontal");
+        zDirection = Input.GetAxis("Vertical");
+        movementVector = transform.right * xDirection + transform.forward * zDirection; // xDirection and zDirection will 0 if not used.
 
+        # region Boolean Checks
         if (onGround)
         {
             hasJumped = false;
         }
 
         if (!onGround && !hasJumped) {
-            hasJumped = true;
+            hasJumped = true; // To fix the collision detection errors that occur on 1 frame getkeys.
         }
+        # endregion
 
+        # region Other Checks
+        if (!onGround)
+        {
+            movementVector.y += gravity * 2 * Time.deltaTime; // *2 to make it fall faster in default mode.
+        }
+        # endregion
+        
         //Movement
+        # region WASD
         if (Input.GetKey(KeyCode.D))
         {
             movementVector += transform.right;
@@ -62,18 +83,21 @@ public class Movement : MonoBehaviour
         {
             movementVector += -transform.forward;
         }
+        # endregion
+        
+        //Special
         if (Input.GetKey(KeyCode.Space))
         {
             if (!hasJumped)
             {
-                rBody.AddForce(0, moveSpeed * jumpMultiplier * Time.deltaTime, 0, ForceMode.Impulse); //This causes bug in FixedUpdate if computer is super low to register update after registering fixed update twice!
+                movementVector.y = Mathf.Sqrt(jumpHeight * -2f * gravity) * jumpMultiplier;
                 hasJumped = true;
             }
             if (hasJumped && UnityEngine.Random.Range(0f,10f) == 9.806650) { // I like eggs
-                Debug.LogWarning("Why are you trying to jump mid-air? Why? Have you EVER jumped mid-air? No. Stop. Jumping. Mid. Air.");
+                Debug.LogWarning("Why are you trying to jump mid-air? Why? Have you EVER jumped mid-air? No... Stop. Jumping. Mid. Air.");
             }
         }
-        if (Input.GetKey(KeyCode.LeftControl))
+        if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
         {
             if (hasJumped)
             {
@@ -89,7 +113,7 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rBody.MovePosition(transform.position + movementVector * Time.deltaTime * moveSpeed);
+        rBody.velocity = new Vector3(0,rBody.velocity.y,0) + movementVector * moveSpeed * Time.deltaTime;
 
         //KeyCode.Shift
         if (nowDashing)
