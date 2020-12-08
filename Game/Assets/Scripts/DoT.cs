@@ -29,7 +29,7 @@ public class DoT : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
             if (!other.CompareTag("ignoreDoT"))
             {
-                other.transform.parent.GetComponent<Health>().Hit(DoTDamage - i);
+                other.GetComponent<Health>().Hit(DoTDamage - i);
             }
         }
     }
@@ -40,7 +40,7 @@ public class DoT : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
             if (!other.CompareTag("ignoreDoT"))
             {
-                other.transform.parent.GetComponent<Health>().Hit(1f);
+                other.GetComponent<Health>().Hit(1f);
             }
         }
     }

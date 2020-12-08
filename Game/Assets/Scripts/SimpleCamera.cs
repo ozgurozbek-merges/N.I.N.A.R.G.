@@ -2,22 +2,34 @@ using UnityEngine;
 
 public class SimpleCamera : MonoBehaviour
 {
-    public GameObject playerObject;
+    [Header("Player")]
+    public Transform playerObject;
 
-    public float speed = 0.1f;
-    private float yaw = 0f;
-    private float pitch = 0f;
+    [Header("Mouse")]
+    public float mouseSensitivity = 100f;
+    private float mouseX = 0f;
+    private float mouseY = 0f;
+    private float xRotation = 0f;
+
+    private void Start() {
+        // Locks the mouse in window
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    private void Update() {
+        mouseX = mouseSensitivity * Input.GetAxis("Mouse X") * Time.deltaTime; // Mouse sideways
+        mouseY = mouseSensitivity * Input.GetAxis("Mouse Y") * Time.deltaTime; // Mouse up-down
+        xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f); // Adjusts the Camera angle limitations.
+    }
 
     private void LateUpdate()
     {
-        yaw += speed * Input.GetAxis("Mouse X");
-        pitch -= speed * Input.GetAxis("Mouse Y");
+        // Rotation for the Camera, handling Mouse Y
+        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
-        // Rotation for the Camera, handling Mouse X & Y
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(new Vector3(pitch, yaw, 0)), speed*10);
-
-        // Rotation for the Player. handling only X because player can't bend World Space.
-        playerObject.transform.eulerAngles = new Vector3(0, yaw, 0);
+        // Rotation for the Player. Handling only X because player can't bend World Space.
+        playerObject.Rotate(Vector3.up * mouseX);
     }
 
 }
