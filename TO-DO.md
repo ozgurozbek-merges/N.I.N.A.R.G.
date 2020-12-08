@@ -2,6 +2,7 @@
 
 ## To Be Done
 
+* Color Correction randomized for every room.
 * Roguelike dungeon spawner
 * Lots of room designs
 * Random Spawner Script, for items & pickups. Derives rarity multiplication from room level
