@@ -12,6 +12,7 @@ public class SimpleCamera : MonoBehaviour
     private float xRotation = 0f;
 
     private void Start() {
+        Cursor.visible = false;
         // Locks the mouse in window
         Cursor.lockState = CursorLockMode.Locked;
     }
