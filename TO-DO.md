@@ -2,7 +2,8 @@
 
 ## To Be Done
 
-* Randomized Color Correction for every room so even the same rooms back to back look different.
+* Colour blind enemy and friendly outlines. Make them in the shader.
+* Randomized Color Correction for every room so even the same rooms back to back look different. Outlines should NEVER change.
 * Roguelike dungeon spawner
     - Lots of room designs
 * Random Spawner Script, for items & pickups. Derives rarity multiplication from room level
