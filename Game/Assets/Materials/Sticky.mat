@@ -20,15 +20,15 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: player
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Name: Sticky
+  m_Shader: {fileID: -6465566751694194690, guid: f0c8185f8e9150142ac9b08f1ba7868c,
+    type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2050
-  stringTagMap:
-    RenderType: Opaque
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -84,7 +84,10 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.5258544, g: 0.9528302, b: 0.9445529, a: 1}
+    - Color_51B4045A: {r: 16, g: 0.1254902, b: 0, a: 0}
+    - Color_85542E2: {r: 1, g: 0.6979646, b: 0, a: 0}
+    - Color_A6890F1: {r: 0.4522333, g: 0.53773576, b: 0.28662327, a: 0}
+    - _BaseColor: {r: 0.58579934, g: 1, b: 0.19339621, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
