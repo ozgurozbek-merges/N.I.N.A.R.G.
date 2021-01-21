@@ -307,6 +307,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 366097272}
   m_CullTransparentMesh: 0
+--- !u!1 &403833367 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8829513016416093964, guid: 826eedf8df502934d917d9c18188199b,
+    type: 3}
+  m_PrefabInstance: {fileID: 8340626054724544523}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &469715738
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,12 +451,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &771142747 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6238062817140747203, guid: b25d4b2309db0fd4c903a4754b8540e6,
-    type: 3}
-  m_PrefabInstance: {fileID: 6238062817502142360}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &856291906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1040,12 +1040,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74addf15e4f4846429bce86c86b7b4bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tile_prefabs:
+  roomPrefabs:
   - {fileID: 8829513016416093964, guid: 826eedf8df502934d917d9c18188199b, type: 3}
-  - {fileID: 8829513016416093964, guid: e6e3058430583834bb2c3698398bba0e, type: 3}
-  - {fileID: 8829513016416093964, guid: 5f0bb6e440a864c43b0d247cf3e48d4a, type: 3}
-  player_z: {fileID: 771142747}
-  active_tiles: []
+  - {fileID: 8829513016416093964, guid: 826eedf8df502934d917d9c18188199b, type: 3}
+  - {fileID: 8829513016416093964, guid: 826eedf8df502934d917d9c18188199b, type: 3}
+  currentRoomSpawners: []
+  thisRoom: {fileID: 403833367}
+  activeRooms: []
 --- !u!4 &1964180379
 Transform:
   m_ObjectHideFlags: 0
