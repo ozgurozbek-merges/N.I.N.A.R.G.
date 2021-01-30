@@ -1045,7 +1045,9 @@ MonoBehaviour:
   - {fileID: 8829513016416093964, guid: 826eedf8df502934d917d9c18188199b, type: 3}
   - {fileID: 8829513016416093964, guid: 826eedf8df502934d917d9c18188199b, type: 3}
   currentRoomSpawners: []
+  LastRoom: {fileID: 0}
   thisRoom: {fileID: 403833367}
+  currentroom: {fileID: 0}
   activeRooms: []
 --- !u!4 &1964180379
 Transform:
@@ -1068,6 +1070,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6238062816921244453, guid: b25d4b2309db0fd4c903a4754b8540e6,
+        type: 3}
+      propertyPath: TileSpawner
+      value: 
+      objectReference: {fileID: 1964180377}
     - target: {fileID: 6238062817140747201, guid: b25d4b2309db0fd4c903a4754b8540e6,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1142,6 +1149,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6238062817140747215, guid: b25d4b2309db0fd4c903a4754b8540e6,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b25d4b2309db0fd4c903a4754b8540e6, type: 3}
