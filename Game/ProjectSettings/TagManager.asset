@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ground
   - ignoreDoT
+  - deadground
   layers:
   - Default
   - TransparentFX

@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 public class TileManager : MonoBehaviour
@@ -17,7 +16,6 @@ public class TileManager : MonoBehaviour
     void Start()
     {
         NewStart();
-
     }
     private void NewStart()
     {
@@ -25,18 +23,18 @@ public class TileManager : MonoBehaviour
         activeRooms.Clear();
         for (int i = 0; i < thisRoom.transform.GetChild(0).childCount; i++)
         {
-            if (LastRoom==null)
+            if (LastRoom == null)
             {
                 currentRoomSpawners.Add(thisRoom.transform.GetChild(0).GetChild(i));
             }
             else
             {
-            if (thisRoom.transform.GetChild(0).GetChild(i).transform.position!=LastRoom.transform.position)
-            {
-                currentRoomSpawners.Add(thisRoom.transform.GetChild(0).GetChild(i));
+                if (thisRoom.transform.GetChild(0).GetChild(i).transform.position != LastRoom.transform.position)
+                {
+                    currentRoomSpawners.Add(thisRoom.transform.GetChild(0).GetChild(i));
+                }
             }
-            } 
-            
+
         }
         SpawnRoom();
     }
@@ -46,10 +44,10 @@ public class TileManager : MonoBehaviour
         for (int i = 0; i < currentRoomSpawners.Count; i++)
         {
             GameObject g_obj;
-            g_obj = Instantiate(roomPrefabs[Random.Range(0,roomPrefabs.Length)]) as GameObject; //call random tile
+            g_obj = Instantiate(roomPrefabs[Random.Range(0, roomPrefabs.Length)]) as GameObject; //call random tile
             g_obj.transform.SetParent(transform); //add it under tilemanager in hierarchy
             g_obj.transform.position = currentRoomSpawners[i].position;
-             //place the called tile
+            //place the called tile
             activeRooms.Add(g_obj); //add it to the list above
         }
     }
@@ -57,21 +55,22 @@ public class TileManager : MonoBehaviour
     {
         for (int i = 0; i < currentRoomSpawners.Count; i++)
         {
-            if (currentroom.transform.position!=activeRooms[i].transform.position)
+            if (currentroom.transform.position != activeRooms[i].transform.position)
             {
-                
+                //SHIT CODE
+                activeRooms[i].transform.GetChild(4).transform.GetChild(8).tag = "deadground";
                 Destroy(activeRooms[i]);
-                
             }
         }
 
-       if(LastRoom!= null)
-       {
-
-           Destroy(LastRoom);
-       }
-        LastRoom=thisRoom;
-        thisRoom=currentroom;
+        if (LastRoom != null)
+        {
+            //SHIT CODE
+            LastRoom.transform.GetChild(4).transform.GetChild(8).tag = "deadground";
+            Destroy(LastRoom);
+        }
+        LastRoom = thisRoom;
+        thisRoom = currentroom;
         NewStart();
 
     }
