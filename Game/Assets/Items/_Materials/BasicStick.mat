@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: BasicStick
+  m_Shader: {fileID: -6465566751694194690, guid: 081641be37251d549a067ac6882757e2,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Albedo_Texture:
+        m_Texture: {fileID: 2800000, guid: 96baad1e5ab4c2b42b3703c4a0fa09a0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Emission_Texture:
+        m_Texture: {fileID: 2800000, guid: efa18bd57c511b74583018d787cc51db, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Metallic_Texture:
+        m_Texture: {fileID: 2800000, guid: 1851fe782b621d94ead2357992898896, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Normal_Texture:
+        m_Texture: {fileID: 2800000, guid: 459975ec5d0db82409449fb01c688135, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - Emission_Color: {r: 1, g: 1, b: 1, a: 0}

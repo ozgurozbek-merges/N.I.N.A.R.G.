@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: BentGrip
+  m_Shader: {fileID: -6465566751694194690, guid: 081641be37251d549a067ac6882757e2,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Albedo_Texture:
+        m_Texture: {fileID: 2800000, guid: a7c43eb0f905cf249b3ec304bee4bf8f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Emission_Texture:
+        m_Texture: {fileID: 2800000, guid: bd8c0cb9e7ad7bb489424b978e99787d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Metallic_Texture:
+        m_Texture: {fileID: 2800000, guid: eb9fc7889449bf044b498c6bcfabf6f9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Normal_Texture:
+        m_Texture: {fileID: 2800000, guid: 4a7c12892e5251f4e82981e15d8d9156, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - Emission_Color: {r: 1, g: 1, b: 1, a: 0}
