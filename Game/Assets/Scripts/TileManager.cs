@@ -58,7 +58,7 @@ public class TileManager : MonoBehaviour
             if (currentroom.transform.position != activeRooms[i].transform.position)
             {
                 //SHIT CODE
-                activeRooms[i].transform.GetChild(4).transform.GetChild(8).tag = "deadground";
+                activeRooms[i].transform.GetChild(1).transform.GetChild(0).tag = "deadground";
                 Destroy(activeRooms[i]);
             }
         }
@@ -66,7 +66,7 @@ public class TileManager : MonoBehaviour
         if (LastRoom != null)
         {
             //SHIT CODE
-            LastRoom.transform.GetChild(4).transform.GetChild(8).tag = "deadground";
+            LastRoom.transform.GetChild(1).transform.GetChild(0).tag = "deadground";
             Destroy(LastRoom);
         }
         LastRoom = thisRoom;
